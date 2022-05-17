@@ -1,0 +1,481 @@
+body{
+    margin: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: #f3f2f1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    font: sans-serif;
+}
+
+:before,:after{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+
+.header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.5s ease;
+}
+
+.header.fixed{
+    background-color: #ffffff;
+    position: fixed;
+}
+
+header,
+section,
+footer{
+    display: block;
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.section-title{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2{
+    font-size: 45px;
+    color: rgb(70, 70, 70);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.header .logo{
+    padding: 0 15px;
+    width: 125px;
+    height: auto;
+}
+
+.header .nav{
+    padding: 0 15px;
+}
+
+.header.fixed .nav ul li a{
+    color: #000000;
+}
+
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover{
+    color: #FF9800;
+}
+
+.header .nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.header .nav ul li a{
+    display: block;
+    padding: 60px 50px;
+    font: 24px sans-serif;
+    color: white;
+    transition: color 0.5s ease;
+}
+
+.header .nav ul li a.active,
+.header .nav ul li a:hover{
+    color: #8A7765;
+}
+
+.home-section{
+    min-height: 100vh;
+    background-color: gray;
+    position: relative;
+}
+
+.home-section .row{
+    min-height: 100vh;
+}
+
+.home-section .slide{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.home-section .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.home-section .slide:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: -1;
+}
+
+.home-section .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.home-section .home-content p, h1{
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.home-section .home-content p{
+    font-size: 80px;
+}
+
+.home-section .home-content h1{
+    font-size: 36px;
+    font-style: italic;
+}
+
+.home-section .slide.active .home-content p{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+}
+
+@keyframes fadeInTop{
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.home-section .slide.active .home-content h1{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/*bio section*/
+.bio-section{
+    padding: 80px 0 80px;
+}
+
+.bio-div{
+    flex: 0 0 50%;
+    max-width: 100%;
+    padding: 0 60px;
+    text-align: left;
+    position: relative;
+}
+
+.bio-div:nth-child(2):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 551%;
+    background-color: #cccccc;
+}
+
+.bio-div img{
+    max-width: 500px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.bio-div h3{
+    font-size: 40px;
+    margin: 30px 0;
+    letter-spacing: 2px;
+    color: rgb(70, 70, 70);
+}
+
+.bio-div p{
+    font-size: 20px;
+    line-height: 26px;
+    color: #555555;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.portfolio{
+    padding: 80px 0px 80px;
+    background-color: white;
+}
+
+.portfolio h1{
+    font-size: 45px;
+    color: rgb(70, 70, 70);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.portfolio h4{
+    font-size: 28px;
+    color: rgb(70, 70, 70);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.portfolio .portfolio-item{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.portfolio .portfolio-item-inner{
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .portfolio-item-overlay img{
+    width: 100%;
+    display: block;
+    transition: all 0.5s ease;
+    filter: grayscale(100%);
+}
+
+.portfolio .portfolio-item-inner:hover img{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.portfolio .portfolio-item-inner .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(35, 35, 35, 0.6);
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.portfolio .container{
+    max-width: 100%;
+    margin: auto;
+}
+
+.portfolio .portfolio-item-inner .overlay h4{
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+    opacity: 1;
+    z-index: 2;
+    transition: all 0.5s ease;
+    text-transform: capitalize;
+}
+
+.portfolio .portfolio-item-inner:hover .overlay{
+    background-color: transparent;
+}
+
+.portfolio .portfolio-item-inner .overlay:hover h4{
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.resume{
+    padding: 50px 0 80px;
+}
+
+.resume h1{
+    font-size: 45px;
+    color: rgb(70, 70, 70);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.footer .container{
+    background-color:#555555;
+    max-width: 100%;
+    height: 200px;
+}
+
+.footer .container .info-item{
+    color: white;
+    font-weight:bolder;
+    text-align: center;
+    align-items: center;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 30px 15px;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+.footer .container .info-item p{
+    font-weight:lighter;
+}
+
+.nav-toggle{
+    width: 40px;
+    height: 34px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    display: none;
+}
+
+.header.fixed .nav-toggle{
+    border-color: #000000;
+}
+
+.nav-toggle span{
+    height: 1px;
+    display: block;
+    width: 16px;
+    background-color: #ffffff;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.nav-toggle span:before,
+.header .nav-toggle span:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.nav-toggle span:before{
+    transform: translateY(-6px);
+}
+
+.nav-toggle span:after{
+    transform: translateY(6px);
+}
+
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after{
+    background-color: #000000;
+}
+
+@media(min-width: 768px){
+    .header .nav{
+        display: block!important;
+    }
+}
+
+@media(max-width: 767px){
+    .header{
+        padding: 7px 0;
+        position: fixed;
+    }
+    .header .nav-toggle{
+        display: flex;
+        margin-right: 15px;
+    }
+    .header .nav{
+        flex: 0 0 100%;
+        max-width: 100%;
+        background-color: #ffffff;
+        padding: 0;
+        display: none;
+    }
+    .header.fixed .nav{
+        border-top: 1px solid #cccccc;
+    }
+    .header .nav ul li{
+        display: block;
+        margin: right 25px;
+    }
+    .header.fixed .nav ul li a,
+    .header .nav ul li a{
+        color: #000000;
+        padding: 15px 0;
+    }
+    .home-section .home-content h1{
+        font-size: 20px;
+    }
+
+    .home-section .home-content p{
+        font-size: 40px;
+    }
+
+    .header .logo{
+        padding: 0 15px;
+        width: 100px;
+        height: auto; 
+    }
+
+    .home-section, .slide, .bio-section, .bio-div, .portfolio, .resume{
+        flex: 0 0 100%;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
